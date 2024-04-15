@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page | ClickKicks E-Commerce Fashion</title>
+
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- END STYLE CSS -->
+</head>
+<body id="home">
+
+    <!-- NAVBAR -->
+    <nav class="navbar container-width">
+        <a href="index.html" class="navbar-brand">
+            <img src="assets/images/brand/logo-brand-dark.svg" alt="Brand Logo Dark" height="24">
+        </a>
+        <label class="hamburger" for="hamburger">
+            <div class="hamburger-icon"></div>
+        </label>
+        <input type="checkbox" id="hamburger" class="checkbox-hamburger">
+        <ul class="navbar-link">
+            <li class="link-item link-item-featured active"><a href="#home">Home</a></li>
+            <li class="link-item link-item-featured"><a href="products.html">Sale</a></li>
+            <li class="link-item link-item-featured"><a href="#about">About Us</a></li>
+            <li class="link-item link-item-featured"><a href="#testimonial">Testimonial</a></li>
+        </ul>
+        <ul class="navbar-link-image">
+            <li class="link-image">
+                <img src="assets/images/icon/like.svg" alt="Like Icon" width="15">
+            </li>
+            <li class="link-image">
+                <img src="assets/images/icon/cart.svg" alt="Cart Icon" width="15">
+            </li>
+            <li class="link-image">
+                <img src="assets/images/icon/search.svg" alt="Search Icon" width="15">
+            </li>
+        </ul>
+    </nav>
+    <!-- END NAVBAR -->
+    
+
+    <!-- HEADER HERO -->
+    <header class="hero" id="hero">
+        <div class="container-width">
+            <h1 class="title">here Every Step Tells a Story</h1>
+            <p class="paragraph">Welcome to your new shoe haven—welcome to ClickKicks.</p>
+            <a href="#products" class="button-reverse-light">Explore Now</a>
+        </div>
+    </header>
+    <!-- END HEADER HERO -->
+
+
+    <!-- MAIN -->
+    <main>
+        <!-- SECTION TRENDING -->
+        <section class="trending section-gap-small container-width" id="trending">
+            <div class="section-header">
+                <h1 class="title">Your Gateway to Popular Shoe Styles!</h1>
+                <p class="paragraph">Explore our curated collection of the trendiest footwear, from sleek sneakers to chic boots.</p>
+            </div>
+            <div class="section-content-4 content-gap">
+                <a href="detail.html" class="card-product">
+                    <div class="wrapper-image">
+                        <img src="assets/images/product/product-1.jpg" alt="Product Image">
+                        <div class="background-dark">
+                            <div class="wrapper-arrow">
+                                <img src="assets/images/icon/arrow-light.svg" alt="Arrow Icon" width="20">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrapper-content">
+                        <h6 class="card-title">Nike V2K Run</h6>
+                        <p class="card-price">Rp 1,909,000</p>
+                    </div>
+                </a>
+                <a href="detail.html" class="card-product">
+                    <div class="wrapper-image">
+                        <img src="assets/images/product/product-2.jpg" alt="Product Image">
+                        <div class="background-dark">
+                            <div class="wrapper-arrow">
+                                <img src="assets/images/icon/arrow-light.svg" alt="Arrow Icon" width="20">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrapper-content">
+                        <h6 class="card-title">Nike Air More Uptempo</h6>
+                        <p class="card-price">Rp 2,849,000</p>
+                    </div>
+                </a>
+                <a href="detail.html" class="card-product">
+                    <div class="wrapper-image">
+                        <img src="assets/images/product/product-3.jpg" alt="Product Image">
+                        <div class="background-dark">
+                            <div class="wrapper-arrow">
+                                <img src="assets/images/icon/arrow-light.svg" alt="Arrow Icon" width="20">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrapper-content">
+                        <h6 class="card-title">Nike P-6000</h6>
+                        <p class="card-price">Rp 1,429,000</p>
+                    </div>
+                </a>
+                <a href="detail.html" class="card-product">
+                    <div class="wrapper-image">
+                        <img src="assets/images/product/product-4.jpg" alt="Product Image">
+                        <div class="background-dark">
+                            <div class="wrapper-arrow">
+                                <img src="assets/images/icon/arrow-light.svg" alt="Arrow Icon" width="20">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrapper-content">
+                        <h6 class="card-title">Nike Dunk Low Twist</h6>
+                        <p class="card-price">Rp 1,729,000</p>
+                    </div>
+                </a>
+            </div>
+            <div class="button-group-center">
+                <a href="#products" class="button-primary content-gap">All Products</a>
+            </div>
+        </section>
+        <!-- END SECTION TRENDING -->
+
+
+        <!-- SECTION FEATURED -->
+        <section class="featured section-gap container-width" id="featured">
+            <div class="section-header">
+                <h1 class="title">Featured Picks ClickKicks Must-Have Shoes!</h1>
+                <p class="paragraph">Explore ClickKicks' handpicked selection of featured footwear, curated just for you.</p>
+            </div>
+            <div class="section-content-4 content-gap">
+                <div class="card-featured">
+                    <div class="wrapper-icon">
+                        <img src="assets/images/featured/featured-1.svg" alt="Featured Icon" width="24">
+                    </div>
+                    <h6 class="card-title">Luxury Collection</h6>
+                    <p class="card-paragraph">Elevate your everyday wardrobe with our Luxury Essentials Collection. Discover impeccably crafted basics made from the finest materials, designed to offer comfort without compromising on style. From luxurious cashmere sweaters to tailored cotton shirts, each piece exudes sophistication and versatility.</p>
+                    <button type="button" class="card-redirect" data-bs-toggle="modal" data-bs-target="#featuredModalOne">
+                        More Detail
+                        <img src="assets/images/icon/arrow-primary.svg" alt="Arrow Primary" width="24">
+                    </button> <!-- REDIRECT POPUP MODAL -->
+                </div>
+                <div class="card-featured">
+                    <div class="wrapper-icon">
+                        <img src="assets/images/featured/featured-2.svg" alt="Featured Icon" width="24">
+                    </div>
+                    <h6 class="card-title">Accessories Showcase</h6>
+                    <p class="card-paragraph">Make a bold statement with our Statement Accessories Showcase. Explore a curated selection of eye-catching accessories that add flair and personality to any outfit. From statement jewelry to chic handbags and stylish scarves, these accessories are sure to elevate your look and make heads turn.</p>
+                    <button type="button" class="card-redirect" data-bs-toggle="modal" data-bs-target="#featuredModalTwo">
+                        More Detail
+                        <img src="assets/images/icon/arrow-primary.svg" alt="Arrow Primary" width="24">
+                    </button> <!-- REDIRECT POPUP MODAL -->
+                </div>
+                <div class="card-featured">
+                    <div class="wrapper-icon">
+                        <img src="assets/images/featured/featured-3.svg" alt="Featured Icon" width="24">
+                    </div>
+                    <h6 class="card-title">Chic Workwear Edit</h6>
+                    <p class="card-paragraph">Transition seamlessly from desk to dinner with our Chic Workwear Edit. Explore a range of sophisticated yet contemporary workwear pieces designed to take you from the boardroom to after-work cocktails effortlessly. From tailored blazers to sleek dresses and polished trousers, these versatile pieces will keep you looking sharp and stylish throughout the day.</p>
+                    <button type="button" class="card-redirect" data-bs-toggle="modal" data-bs-target="#featuredModalThree">
+                        More Detail
+                        <img src="assets/images/icon/arrow-primary.svg" alt="Arrow Primary" width="24">
+                    </button> <!-- REDIRECT POPUP MODAL -->
+                </div>
+                <div class="card-featured">
+                    <div class="wrapper-icon">
+                        <img src="assets/images/featured/featured-2.svg" alt="Featured Icon" width="24">
+                    </div>
+                    <h6 class="card-title">Weekend Casual Collection</h6>
+                    <p class="card-paragraph">Embrace laid-back luxury with our Weekend Casual Collection. Discover relaxed yet refined pieces perfect for weekends spent brunching with friends or exploring the city. From cozy knits to stylish denim and comfortable athleisure wear, these pieces strike the perfect balance between comfort and style, ensuring you look effortlessly chic no matter the occasion.</p>
+                    <button type="button" class="card-redirect" data-bs-toggle="modal" data-bs-target="#featuredModalFour">
+                        More Detail
+                        <img src="assets/images/icon/arrow-primary.svg" alt="Arrow Primary" width="24">
+                    </button> <!-- REDIRECT POPUP MODAL -->
+                </div>
+            </div>
+        </section>
+        <!-- END SECTION FEATURED -->
+
+
+        <!-- MODAL FEATURED -->
+        <div class="modal fade" id="featuredModalOne" tabindex="-1" aria-labelledby="featuredModalOne" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title title my-2" id="featuredModalOne">Luxury Collection</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="paragraph">Elevate your everyday wardrobe with our Luxury Essentials Collection. Discover impeccably crafted basics made from the finest materials, designed to offer comfort without compromising on style. From luxurious cashmere sweaters to tailored cotton shirts, each piece exudes sophistication and versatility.</p>
+                        <div class="button-group mt-4">
+                            <button class="button-dark" data-bs-dismiss="modal">Close Modal</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="featuredModalTwo" tabindex="-1" aria-labelledby="featuredModalTwoLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title title my-2" id="featuredModalTwoLabel">Accessories Showcase</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="paragraph">Make a bold statement with our Statement Accessories Showcase. Explore a curated selection of eye-catching accessories that add flair and personality to any outfit. From statement jewelry to chic handbags and stylish scarves, these accessories are sure to elevate your look and make heads turn.</p>
+                        <div class="button-group mt-4">
+                            <button class="button-dark" data-bs-dismiss="modal">Close Modal</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="featuredModalThree" tabindex="-1" aria-labelledby="featuredModalThreeLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title title my-2" id="featuredModalThreeLabel">Chic Workwear Edit</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="paragraph">Transition seamlessly from desk to dinner with our Chic Workwear Edit. Explore a range of sophisticated yet contemporary workwear pieces designed to take you from the boardroom to after-work cocktails effortlessly. From tailored blazers to sleek dresses and polished trousers, these versatile pieces will keep you looking sharp and stylish throughout the day.</p>
+                        <div class="button-group mt-4">
+                            <button class="button-dark" data-bs-dismiss="modal">Close Modal</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="featuredModalFour" tabindex="-1" aria-labelledby="featuredModalFourLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title title my-2" id="featuredModalFourLabel">Luxury Collection</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="paragraph">Elevate your everyday wardrobe with our Luxury Essentials Collection. Discover impeccably crafted basics made from the finest materials, designed to offer comfort without compromising on style. From luxurious cashmere sweaters to tailored cotton shirts, each piece exudes sophistication and versatility.</p>
+                        <div class="button-group mt-4">
+                            <button class="button-dark" data-bs-dismiss="modal">Close Modal</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END MODAL FEATURED -->
+
+
+        <!-- SECTION ABOUT -->
+        <section class="about section-gap-small" id="about">
+            <div class="container-width">
+                <div class="about-content">
+                    <h1 class="title">Discover the ClickKicks Difference Where Style Meets Comfort and Quality</h1>
+                    <div class="paragraph-group">
+                        <p class="paragraph">At ClickKicks, we're passionate about providing you with the perfect blend of style and comfort in every step you take. Our mission is simple: to offer a diverse range of high-quality footwear that elevates your fashion game while ensuring maximum comfort.</p>
+                        <p class="paragraph">With ClickKicks, you can trust that each pair is carefully curated to meet your needs and exceed your expectations. Step into confidence with ClickKicks today!</p>
+                    </div>
+                    <div class="button-group">
+                        <a href="#trending" class="button-primary">Trending Product</a>
+                        <a href="#gallery" class="button-light">Discover Gallery</a>
+                    </div>
+                </div>
+                <div class="wrapper-image">
+                    <div class="wrapper">
+                        <img src="assets/images/about/banner-about.jpg" alt="Banner About" class="banner-about">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END SECTION ABOUT -->
+
+
+        <!-- SECTION PRODUCT -->
+        <section class="trending section-gap-small container-width" id="products">
+            <div class="section-header">
+                <h1 class="title">Find Your Perfect Pair at ClickKicks!</h1>
+                <p class="paragraph">Dive into the extensive collection of shoes at ClickKicks, where every step leads you closer to your ideal pair.</p>
+            </div>
+            <div class="section-button">
+                <div class="wrapper">
+                    <button type="button" class="button-small active">All Shoes</button>
+                    <button type="button" class="button-small">Men</button>
+                    <button type="button" class="button-small">Women</button>
+                    <button type="button" class="button-small">Kids</button>
+                </div>
+            </div>
+            <div class="section-content-4">
+                <a href="detail.html" class="card-product">
+                    <div class="wrapper-image">
+                        <img src="assets/images/product/product-1.jpg" alt="Product Image">
+                        <div class="background-dark">
+                            <div class="wrapper-arrow">
+                                <img src="assets/images/icon/arrow-light.svg" alt="Arrow Icon" width="20">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrapper-content">
+                        <h6 class="card-title">Nike V2K Run</h6>
+                        <p class="card-price">Rp 1,909,000</p>
+                    </div>
+                </a>
+                <a href="detail.html" class="card-product">
+                    <div class="wrapper-image">
+                        <img src="assets/images/product/product-2.jpg" alt="Product Image">
+                        <div class="background-dark">
+                            <div class="wrapper-arrow">
+                                <img src="assets/images/icon/arrow-light.svg" alt="Arrow Icon" width="20">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrapper-content">
+                        <h6 class="card-title">Nike Air More Uptempo</h6>
+                        <p class="card-price">Rp 2,849,000</p>
+                    </div>
+                </a>
+                <a href="detail.html" class="card-product">
+                    <div class="wrapper-image">
+                        <img src="assets/images/product/product-3.jpg" alt="Product Image">
+                        <div class="background-dark">
+                            <div class="wrapper-arrow">
+                                <img src="assets/images/icon/arrow-light.svg" alt="Arrow Icon" width="20">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrapper-content">
+                        <h6 class="card-title">Nike P-6000</h6>
+                        <p class="card-price">Rp 1,429,000</p>
+                    </div>
+                </a>
+                <a href="detail.html" class="card-product">
+                    <div class="wrapper-image">
+                        <img src="assets/images/product/product-4.jpg" alt="Product Image">
+                        <div class="background-dark">
+                            <div class="wrapper-arrow">
+                                <img src="assets/images/icon/arrow-light.svg" alt="Arrow Icon" width="20">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrapper-content">
+                        <h6 class="card-title">Nike Dunk Low Twist</h6>
+                        <p class="card-price">Rp 1,729,000</p>
+                    </div>
+                </a>
+                <a href="detail.html" class="card-product">
+                    <div class="wrapper-image">
+                        <img src="assets/images/product/product-5.jpg" alt="Product Image">
+                        <div class="background-dark">
+                            <div class="wrapper-arrow">
+                                <img src="assets/images/icon/arrow-light.svg" alt="Arrow Icon" width="20">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrapper-content">
+                        <h6 class="card-title">Nike Air Force 1 '07 LV8</h6>
+                        <p class="card-price">Rp 1,909,000</p>
+                    </div>
+                </a>
+                <a href="detail.html" class="card-product">
+                    <div class="wrapper-image">
+                        <img src="assets/images/product/product-6.jpg" alt="Product Image">
+                        <div class="background-dark">
+                            <div class="wrapper-arrow">
+                                <img src="assets/images/icon/arrow-light.svg" alt="Arrow Icon" width="20">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrapper-content">
+                        <h6 class="card-title">Nike Full Force Low</h6>
+                        <p class="card-price">Rp 1,549,000</p>
+                    </div>
+                </a>
+                <a href="detail.html" class="card-product">
+                    <div class="wrapper-image">
+                        <img src="assets/images/product/product-7.jpg" alt="Product Image">
+                        <div class="background-dark">
+                            <div class="wrapper-arrow">
+                                <img src="assets/images/icon/arrow-light.svg" alt="Arrow Icon" width="20">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrapper-content">
+                        <h6 class="card-title">Nike Journey Run</h6>
+                        <p class="card-price">Rp 1,399,000</p>
+                    </div>
+                </a>
+                <a href="detail.html" class="card-product">
+                    <div class="wrapper-image">
+                        <img src="assets/images/product/product-8.jpg" alt="Product Image">
+                        <div class="background-dark">
+                            <div class="wrapper-arrow">
+                                <img src="assets/images/icon/arrow-light.svg" alt="Arrow Icon" width="20">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrapper-content">
+                        <h6 class="card-title">Nike Journey Run</h6>
+                        <p class="card-price">Rp 1,399,000</p>
+                    </div>
+                </a>
+            </div>
+            <div class="button-group-center">
+                <button type="button" class="button-primary content-gap">More Product</button>
+            </div>
+        </section>
+        <!-- END SECTION PRODUCT -->
+
+
+        <!-- SECTION GALLERY -->
+        <section class="gallery section-gap-small container-width" id="gallery">
+            <div class="section-header">
+                <h1 class="title">ClickKicks Documentation</h1>
+                <p class="paragraph">Welcome to ClickKicks Documentation, your ultimate guide to navigating our platform with ease.</p>
+            </div>
+            <div class="section-content-4 content-gap">
+                <div class="content-gallery">
+                    <div class="wrapper-image">
+                        <img src="assets/images/documentation/documentation-1.jpg" alt="Documentation Gallery">
+                    </div>
+                    <div class="wrapper-image">
+                        <img src="assets/images/documentation/documentation-2.jpg" alt="Documentation Gallery">
+                    </div>
+                </div>
+                <div class="content-gallery">
+                    <div class="wrapper-image">
+                        <img src="assets/images/documentation/documentation-3.jpg" alt="Documentation Gallery">
+                    </div>
+                    <div class="wrapper-image">
+                        <img src="assets/images/documentation/documentation-4.jpg" alt="Documentation Gallery">
+                    </div>
+                    <div class="wrapper-image">
+                        <img src="assets/images/documentation/documentation-5.jpg" alt="Documentation Gallery">
+                    </div>
+                </div>
+                <div class="content-gallery">
+                    <div class="wrapper-image">
+                        <img src="assets/images/documentation/documentation-6.jpg" alt="Documentation Gallery">
+                    </div>
+                    <div class="wrapper-image">
+                        <img src="assets/images/documentation/documentation-7.jpg" alt="Documentation Gallery">
+                    </div>
+                    <div class="wrapper-image">
+                        <img src="assets/images/documentation/documentation-8.jpg" alt="Documentation Gallery">
+                    </div>
+                </div>
+                <div class="content-gallery">
+                    <div class="wrapper-image">
+                        <img src="assets/images/documentation/documentation-9.jpg" alt="Documentation Gallery">
+                    </div>
+                    <div class="wrapper-image">
+                        <img src="assets/images/documentation/documentation-10.jpg" alt="Documentation Gallery">
+                    </div>
+                </div>
+            </div>
+            <div class="button-group-center">
+                <a href="#gallery" class="button-primary content-gap">More Documentation</a>
+            </div>
+        </section>  
+        <!-- END SECTION GALLERY -->
+
+        <!-- SECTION TESTIMONIAL -->
+        <section class="testimonial section-gap-small" id="testimonial">
+            <div class="container-width">
+                <div class="wrapper-image">
+                    <div class="wrapper">
+                        <img src="assets/images/testimonial/banner-testimonial.jpg" alt="Banner About" class="banner-about">
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <h1 class="title">Walking in Confidence Testimonials from ClickKicks' Happy Customers</h1>
+                    <p class="paragraph">Hear from our satisfied customers about their ClickKicks experience. Read real testimonials from shoe lovers who have discovered style, comfort, and quality with ClickKicks footwear.</p>
+                    <div class="scroll-testimonial">
+                        <div class="wrapper-testimonial">
+                            <div class="card-testimonial">
+                                <img src="assets/images/icon/quote.svg" alt="Quote Icon" width="32">
+                                <p class="card-message">“I've never been more pleased with a shoe purchase until I discovered ClickKicks. Not only do they offer a stunning array of styles, but the comfort is unmatched. I can confidently say I'll be a lifelong customer!”</p>
+                                <div class="card-profile">
+                                    <img src="assets/images/testimonial/testimonial-1.jpg" alt="Testimonial Profile" width="42">
+                                    <div class="wrapper">
+                                        <p class="username">Sarah Marina</p>
+                                        <p class="job">Shoes Collection Enthusiast</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-testimonial">
+                                <img src="assets/images/icon/quote.svg" alt="Quote Icon" width="32">
+                                <p class="card-message">“As someone who's always on the go, finding shoes that blend style with comfort is a priority. ClickKicks not only met but exceeded my expectations. Their sneakers are not only fashionable but incredibly comfortable for long walks or busy days.”</p>
+                                <div class="card-profile">
+                                    <img src="assets/images/testimonial/testimonial-2.jpg" alt="Testimonial Profile" width="42">
+                                    <div class="wrapper">
+                                        <p class="username">James Wirawan</p>
+                                        <p class="job">Shoes Collection Enthusiast accordion </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END SECTION TESTIMONIAL -->
+
+
+        <!-- SECTION CTA -->
+        <section class="cta container-width" id="cta">
+            <div class="section-header">
+                <h1 class="title">Step into Style with ClickKicks Explore Our Collection Today!</h1>
+                <div class="button-group">
+                    <a href="#products" class="button-dark">Explore Product</a>
+                    <a href="#gallery" class="button-light">Documentation Gallery</a>
+                </div>
+            </div>
+        </section>
+        <!-- END SECTION CTA -->
+    </main>
+    <!-- END MAIN -->
+
+
+    <!-- FOOTER -->
+    <footer class="footer container-width" id="footer">
+        <div class="footer-profile">
+            <img src="assets/images/brand/logo-brand-light.svg" alt="Brand Logo" height="26">
+            <p class="footer-caption">At ClickKicks, we're passionate about providing you with the perfect blend of style and comfort in every step you take.</p>
+            <div class="footer-sosmed">
+                <a target="_blank" href="https://www.facebook.com/" class="sosmed-link">
+                    <img src="assets/images/icon/facebook.svg" alt="Facebook Icon" width="16">
+                </a>
+                <a target="_blank" href="whatsapp://send?text=Hello&phone=+6281238484005" class="sosmed-link">
+                    <img src="assets/images/icon/whatsapp.svg" alt="Whatsapp Icon" width="16">
+                </a>
+                <a target="_blank" href="https://twitter.com/?lang=id" class="sosmed-link">
+                    <img src="assets/images/icon/twitter.svg" alt="Twitter Icon" width="16">
+                </a>
+            </div>
+        </div>
+        <div class="footer-link">
+            <h6 class="footer-title">Quick Link</h6>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="products.html">Sale</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#testimonial">Testimonial</a></li>
+            </ul>
+        </div>
+        <div class="footer-link">
+            <h6 class="footer-title">Our Featured</h6>
+            <ul>
+                <li><a href="#featured">Luxury Collection</a></li>
+                <li><a href="#featured">Accessories Showcase</a></li>
+                <li><a href="#featured">Chic Workwear Edit</a></li>
+                <li><a href="#featured">Weekend Casual Collection</a></li>
+            </ul>
+        </div>
+        <div class="footer-link">
+            <h6 class="footer-title">Help & Guide</h6>
+            <ul>
+                <li><a>Terms & Conditions</a></li>
+                <li><a>Privacy Policy</a></li>
+                <li><a target="_blank" href="whatsapp://send?text=Hello&phone=+6281238484005">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <footer class="copyright">
+        <p class="label">Copyright © 2024 CLICKKICKS. All Right Reserved.</p>
+    </footer>
+    <!-- END FOOTER -->
+
+
+    <!-- SCRIPT JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- END SCRIPT JS -->
+</body>
+</html>
