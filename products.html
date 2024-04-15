@@ -31,7 +31,7 @@
             <li class="link-image">
                 <img src="assets/images/icon/like.svg" alt="Like Icon" width="15">
             </li>
-            <li class="link-image">
+            <li class="link-image" data-bs-toggle="modal" data-bs-target="#modalCart">
                 <img src="assets/images/icon/cart.svg" alt="Cart Icon" width="15">
             </li>
             <li class="link-image">
@@ -40,6 +40,58 @@
         </ul>
     </nav>
     <!-- END NAVBAR -->
+
+
+    <!-- MODAL CART -->
+    <div class="modal fade" id="modalCart" tabindex="-1" aria-labelledby="modalCart" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="wrapper d-flex align-items-center justify-content-between ">
+                        <h4 class="title">Cart Product</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="card-cart d-flex align-items-end gap-3 justify-content-between">
+                        <div class="wrapper d-flex gap-3 align-items-center ">
+                            <img src="assets/images/product/product-1.jpg" alt="Product Image" class="cart-image">
+                            <div class="wrapper d-flex flex-column gap-2">
+                                <h6 class="cart-title primary mb-1">NIKE V2K RUN</h6>
+                                <div class="wrapper d-flex gap-4">
+                                    <h6 class="cart-subtitle">Size: 40</h6>
+                                    <h6 class="cart-subtitle">Quantity: 20</h6>
+                                </div>
+                                <h6 class="cart-subtitle">Packaging: Bubble Wrap</h6>
+                                <h6 class="cart-subtitle">Special Request: -</h6>
+                            </div>
+                        </div>
+                        <div class="wrapper">
+                            <h6 class="cart-title mb-2">RP 1,909,000</h6>
+                            <button type="button" class="button-primary">Delete Product</button>
+                        </div>
+                    </div>
+                    <div class="card-cart d-flex align-items-end gap-3 justify-content-between">
+                        <div class="wrapper d-flex gap-3 align-items-center ">
+                            <img src="assets/images/product/product-1.jpg" alt="Product Image" class="cart-image">
+                            <div class="wrapper d-flex flex-column gap-2">
+                                <h6 class="cart-title primary mb-1">NIKE V2K RUN</h6>
+                                <div class="wrapper d-flex gap-4">
+                                    <h6 class="cart-subtitle">Size: 40</h6>
+                                    <h6 class="cart-subtitle">Quantity: 20</h6>
+                                </div>
+                                <h6 class="cart-subtitle">Packaging: Bubble Wrap</h6>
+                                <h6 class="cart-subtitle">Special Request: -</h6>
+                            </div>
+                        </div>
+                        <div class="wrapper">
+                            <h6 class="cart-title mb-2">RP 1,909,000</h6>
+                            <button type="button" class="button-primary">Delete Product</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL CART -->
 
 
     <!-- MAIN -->
@@ -59,7 +111,7 @@
                 </div>
             </div>
             <div class="section-content-4">
-                <a href="detail.html" class="card-product">
+                <a class="card-product" data-bs-toggle="modal" data-bs-target="#productOne" style="cursor: pointer;">
                     <div class="wrapper-image">
                         <img src="assets/images/product/product-1.jpg" alt="Product Image">
                         <div class="background-dark">
@@ -73,7 +125,7 @@
                         <p class="card-price">Rp 1,909,000</p>
                     </div>
                 </a>
-                <a href="detail.html" class="card-product">
+                <a class="card-product" data-bs-toggle="modal" data-bs-target="#productTwo" style="cursor: pointer;">
                     <div class="wrapper-image">
                         <img src="assets/images/product/product-2.jpg" alt="Product Image">
                         <div class="background-dark">
@@ -87,7 +139,7 @@
                         <p class="card-price">Rp 2,849,000</p>
                     </div>
                 </a>
-                <a href="detail.html" class="card-product">
+                <a class="card-product" data-bs-toggle="modal" data-bs-target="#productThree" style="cursor: pointer;">
                     <div class="wrapper-image">
                         <img src="assets/images/product/product-3.jpg" alt="Product Image">
                         <div class="background-dark">
@@ -101,7 +153,7 @@
                         <p class="card-price">Rp 1,429,000</p>
                     </div>
                 </a>
-                <a href="detail.html" class="card-product">
+                <a class="card-product" data-bs-toggle="modal" data-bs-target="#productFour" style="cursor: pointer;">
                     <div class="wrapper-image">
                         <img src="assets/images/product/product-4.jpg" alt="Product Image">
                         <div class="background-dark">
@@ -115,7 +167,7 @@
                         <p class="card-price">Rp 1,729,000</p>
                     </div>
                 </a>
-                <a href="detail.html" class="card-product">
+                <a class="card-product" data-bs-toggle="modal" data-bs-target="#productFive" style="cursor: pointer;">
                     <div class="wrapper-image">
                         <img src="assets/images/product/product-5.jpg" alt="Product Image">
                         <div class="background-dark">
@@ -129,7 +181,7 @@
                         <p class="card-price">Rp 1,909,000</p>
                     </div>
                 </a>
-                <a href="detail.html" class="card-product">
+                <a class="card-product" data-bs-toggle="modal" data-bs-target="#productSix" style="cursor: pointer;">
                     <div class="wrapper-image">
                         <img src="assets/images/product/product-6.jpg" alt="Product Image">
                         <div class="background-dark">
@@ -143,7 +195,7 @@
                         <p class="card-price">Rp 1,549,000</p>
                     </div>
                 </a>
-                <a href="detail.html" class="card-product">
+                <a class="card-product" data-bs-toggle="modal" data-bs-target="#productSeven" style="cursor: pointer;">
                     <div class="wrapper-image">
                         <img src="assets/images/product/product-7.jpg" alt="Product Image">
                         <div class="background-dark">
@@ -157,7 +209,7 @@
                         <p class="card-price">Rp 1,399,000</p>
                     </div>
                 </a>
-                <a href="detail.html" class="card-product">
+                <a class="card-product" data-bs-toggle="modal" data-bs-target="#productEight" style="cursor: pointer;">
                     <div class="wrapper-image">
                         <img src="assets/images/product/product-8.jpg" alt="Product Image">
                         <div class="background-dark">
@@ -177,6 +229,85 @@
             </div>
         </section>
         <!-- END SECTION PRODUCT -->
+
+
+        <!-- MODAL PRODUCT -->
+        <div class="modal fade" id="productOne" tabindex="-1" aria-labelledby="productOne" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <section class="detail mt-4">
+                            <div class="wrapper-image">
+                                <img src="assets/images/product/product-1.jpg" alt="Detail Product" class="detail-product">
+                            </div>
+                            <div class="detail-content">
+                                <div class="wrapper d-flex justify-content-between">
+                                    <h5 class="detail-price">Rp 2,379,000</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <h2 class="title">Jordan Flight Heritage</h2>
+                                <p class="paragraph">You already know the vibe. An absolutely classic graphic on a relaxed tee with a slightly boxy cut. That's all you need.</p>
+                                <ul>
+                                    <li>Jumpman screen print on sleeve</li>
+                                    <li>100% cotton</li>
+                                    <li>Machine wash</li>
+                                    <li>Imported</li>
+                                    <li>Colour Shown: Jade Smoke/Barely Green</li>
+                                    <li>Style: FQ3240-304</li>
+                                    <li>Country/Region of Origin: China</li>
+                                </ul>
+                                <form>
+                                    <div class="input-group">
+                                        <label for="size">Select Size</label>
+                                        <select id="size" class="input">
+                                            <option selected>Select Size</option>
+                                            <option value="sx">SX</option>
+                                            <option value="sm">SM</option>
+                                            <option value="s">S</option>
+                                            <option value="m">M</option>
+                                            <option value="l">L</option>
+                                            <option value="xl">XL</option>
+                                            <option value="xxl">XXL</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="quantity">Quantity</label>
+                                        <input type="number" id="quantity" class="input" placeholder="Input your quantity">
+                                        <p class="caption">If you can’t find your sizes, please kindly input here</p>
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="request">Special Request</label>
+                                        <input type="text" id="request" class="input" placeholder="Input your special request">
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="packaging">Packaging</label>
+                                        <div class="wrapper-packaging">
+                                            <label class="button-packaging">
+                                                <input type="radio" name="packaging">
+                                                <span>Normal</span>
+                                            </label>
+                                            <label class="button-packaging">
+                                                <input type="radio" name="packaging">
+                                                <span>Bubble Wrap</span>
+                                            </label>
+                                            <label class="button-packaging">
+                                                <input type="radio" name="packaging">
+                                                <span>Wooden Box</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="wrapper d-flex align-items-center gap-2 ">
+                                        <button type="button" class="button-primary">Add to Cart Now</button>
+                                        <a target="_blank" href="whatsapp://send?text=Hello&phone=+6281238484005" class="button-dark w-100 text-center " style="padding: 14px 24px;">Buy Now</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END MODAL PRODUCT -->
 
 
         <!-- SECTION CTA -->
