@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sale Page | ClickKicks E-Commerce Fashion</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
 
     <!-- STYLE CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- END STYLE CSS -->
 </head>
-<body id="home">
+<body id="body">
 
     <!-- NAVBAR -->
     <nav class="navbar container-width">
@@ -95,7 +96,7 @@
 
 
     <!-- MAIN -->
-    <main>
+    <main id="main">
         <!-- SECTION PRODUCT -->
         <section class="trending section-gap-small container-width" id="products">
             <div class="section-header">
@@ -111,9 +112,10 @@
                 </div>
             </div>
             <div class="section-content-4">
-                <a class="card-product" data-bs-toggle="modal" data-bs-target="#productOne" style="cursor: pointer;">
-                    <div class="wrapper-image">
-                        <img src="assets/images/product/product-1.jpg" alt="Product Image">
+                <button  v-for="(item, index) in allProducts" :key="index" class="card-product bg-white"  data-bs-toggle="modal" data-bs-target="#productOne" style="cursor: pointer;" >
+                    <div class="wrapper-image" @click="seeProduct(index)">
+                        <div class="wrapper-image">
+                        <img :src="item.imageProducts" alt="Product Image">
                         <div class="background-dark">
                             <div class="wrapper-arrow">
                                 <img src="assets/images/icon/arrow-light.svg" alt="Arrow Icon" width="20">
@@ -121,108 +123,11 @@
                         </div>
                     </div>
                     <div class="wrapper-content">
-                        <h6 class="card-title">Nike V2K Run</h6>
-                        <p class="card-price">Rp 1,909,000</p>
+                        <h6 class="card-title">{{item.name}}</h6>
+                        <p v-if="item.priceDiscount != null" class="card-price">Rp {{item.priceDiscount}}</p>
+                        <p v-else class="card-price">Rp {{item.price}}</p>
                     </div>
-                </a>
-                <a class="card-product" data-bs-toggle="modal" data-bs-target="#productTwo" style="cursor: pointer;">
-                    <div class="wrapper-image">
-                        <img src="assets/images/product/product-2.jpg" alt="Product Image">
-                        <div class="background-dark">
-                            <div class="wrapper-arrow">
-                                <img src="assets/images/icon/arrow-light.svg" alt="Arrow Icon" width="20">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wrapper-content">
-                        <h6 class="card-title">Nike Air More Uptempo</h6>
-                        <p class="card-price">Rp 2,849,000</p>
-                    </div>
-                </a>
-                <a class="card-product" data-bs-toggle="modal" data-bs-target="#productThree" style="cursor: pointer;">
-                    <div class="wrapper-image">
-                        <img src="assets/images/product/product-3.jpg" alt="Product Image">
-                        <div class="background-dark">
-                            <div class="wrapper-arrow">
-                                <img src="assets/images/icon/arrow-light.svg" alt="Arrow Icon" width="20">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wrapper-content">
-                        <h6 class="card-title">Nike P-6000</h6>
-                        <p class="card-price">Rp 1,429,000</p>
-                    </div>
-                </a>
-                <a class="card-product" data-bs-toggle="modal" data-bs-target="#productFour" style="cursor: pointer;">
-                    <div class="wrapper-image">
-                        <img src="assets/images/product/product-4.jpg" alt="Product Image">
-                        <div class="background-dark">
-                            <div class="wrapper-arrow">
-                                <img src="assets/images/icon/arrow-light.svg" alt="Arrow Icon" width="20">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wrapper-content">
-                        <h6 class="card-title">Nike Dunk Low Twist</h6>
-                        <p class="card-price">Rp 1,729,000</p>
-                    </div>
-                </a>
-                <a class="card-product" data-bs-toggle="modal" data-bs-target="#productFive" style="cursor: pointer;">
-                    <div class="wrapper-image">
-                        <img src="assets/images/product/product-5.jpg" alt="Product Image">
-                        <div class="background-dark">
-                            <div class="wrapper-arrow">
-                                <img src="assets/images/icon/arrow-light.svg" alt="Arrow Icon" width="20">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wrapper-content">
-                        <h6 class="card-title">Nike Air Force 1 '07 LV8</h6>
-                        <p class="card-price">Rp 1,909,000</p>
-                    </div>
-                </a>
-                <a class="card-product" data-bs-toggle="modal" data-bs-target="#productSix" style="cursor: pointer;">
-                    <div class="wrapper-image">
-                        <img src="assets/images/product/product-6.jpg" alt="Product Image">
-                        <div class="background-dark">
-                            <div class="wrapper-arrow">
-                                <img src="assets/images/icon/arrow-light.svg" alt="Arrow Icon" width="20">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wrapper-content">
-                        <h6 class="card-title">Nike Full Force Low</h6>
-                        <p class="card-price">Rp 1,549,000</p>
-                    </div>
-                </a>
-                <a class="card-product" data-bs-toggle="modal" data-bs-target="#productSeven" style="cursor: pointer;">
-                    <div class="wrapper-image">
-                        <img src="assets/images/product/product-7.jpg" alt="Product Image">
-                        <div class="background-dark">
-                            <div class="wrapper-arrow">
-                                <img src="assets/images/icon/arrow-light.svg" alt="Arrow Icon" width="20">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wrapper-content">
-                        <h6 class="card-title">Nike Journey Run</h6>
-                        <p class="card-price">Rp 1,399,000</p>
-                    </div>
-                </a>
-                <a class="card-product" data-bs-toggle="modal" data-bs-target="#productEight" style="cursor: pointer;">
-                    <div class="wrapper-image">
-                        <img src="assets/images/product/product-8.jpg" alt="Product Image">
-                        <div class="background-dark">
-                            <div class="wrapper-arrow">
-                                <img src="assets/images/icon/arrow-light.svg" alt="Arrow Icon" width="20">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wrapper-content">
-                        <h6 class="card-title">Nike Journey Run</h6>
-                        <p class="card-price">Rp 1,399,000</p>
-                    </div>
-                </a>
+                </button>
             </div>
             <div class="button-group-center">
                 <button type="button" class="button-primary content-gap">More Product</button>
@@ -236,25 +141,20 @@
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <section class="detail mt-4">
+                        <section class="detail mt-4" id="main">
                             <div class="wrapper-image">
                                 <img src="assets/images/product/product-1.jpg" alt="Detail Product" class="detail-product">
                             </div>
                             <div class="detail-content">
                                 <div class="wrapper d-flex justify-content-between">
-                                    <h5 class="detail-price">Rp 2,379,000</h5>
+                                    <h5 v-if="dataDetail.priceDiscount != null" class="detail-price">Rp {{dataDetail.priceDiscount}}</h5>
+                                    <h5 v-else class="detail-price">Rp {{dataDetail.price}}</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <h2 class="title">Jordan Flight Heritage</h2>
-                                <p class="paragraph">You already know the vibe. An absolutely classic graphic on a relaxed tee with a slightly boxy cut. That's all you need.</p>
+                                <h2 class="title">{{dataDetail.name}}</h2>
+                                <p class="paragraph">{{dataDetail.description}}</p>
                                 <ul>
-                                    <li>Jumpman screen print on sleeve</li>
-                                    <li>100% cotton</li>
-                                    <li>Machine wash</li>
-                                    <li>Imported</li>
-                                    <li>Colour Shown: Jade Smoke/Barely Green</li>
-                                    <li>Style: FQ3240-304</li>
-                                    <li>Country/Region of Origin: China</li>
+                                    <li v-for="item in dataDetail.benefit">{{item}}</li>
                                 </ul>
                                 <form>
                                     <div class="input-group">
@@ -378,6 +278,7 @@
 
     <!-- SCRIPT JS -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src = "assets/js/main.js"></script>
     <!-- END SCRIPT JS -->
 </body>
 </html>

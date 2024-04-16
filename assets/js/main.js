@@ -11,6 +11,9 @@ var home=new Vue({
             "Dual-density foam midsole creates a comfortable ride.",
             "Translucent plastic accents reference the classic Nike Vomero 5.",
             "Rubber outsole gives you durable traction.",
+            "Colour Shown: White/Platinum Tint/Pure Platinum/Metallic Silver",
+            "Style: FD0736-104",
+            "Country/Region of Origin: Vietnam",
           ],
           size: [
             "35.5",
@@ -38,6 +41,9 @@ var home=new Vue({
             "Oversized, graffiti-inspired branding celebrates the streets you walk and the Air you walk on.",
             "Originally designed for performance hoops, Max Air units add lightweight cushioning.",
             "Rubber outsole provides traction and durability.",
+            "Colour Shown: White/Vintage Green/Summit White/Sea Glass",
+            "Style: FN6249-100",
+            "Country/Region of Origin: Vietnam",
           ],
           size: [
             "35.5",
@@ -123,6 +129,9 @@ var home=new Vue({
             "Leather upper softens and gains vintage character with wear.",
             "Originally designed for performance hoops, the Nike Air cushioning adds lightweight, all-day comfort.",
             "Padded, low-cut collar looks sleek and feels great.",
+            "Colour Shown: White/Vintage Green/Summit White/Sea Glass",
+            "Style: HF1939-100",
+            "Country/Region of Origin: Vietnam",
           ],
           size: [
             "35.5",
@@ -148,6 +157,9 @@ var home=new Vue({
           benefit: [
             "The upper mixes leather and suede for a layered look built to last.",
             "Rubber outsole provides durable traction.",
+            "Colour Shown: White/Sea Glass/Cosmic Clay/Vintage Green",
+            "Style: HF1739-100",
+            "Country/Region of Origin: Vietnam",
           ],
           size: [
             "35.5",
@@ -174,6 +186,9 @@ var home=new Vue({
             "Engineered mesh helps your feet feel secure.",
             "Extra cushioning in the heel and soft touch points in the tongue and collar add comfort.",
             "The rubber outsole provides traction for your miles.",
+            "Colour Shown: White/Fire Red/Cement Grey/Black",
+            "Style: FN0228-103",
+            "Country/Region of Origin: Vietnam",
           ],
           size: [
             "35.5",
@@ -200,6 +215,9 @@ var home=new Vue({
             "Engineered mesh helps your feet feel secure.",
             "Extra cushioning in the heel and soft touch points in the tongue and collar add comfort.",
             "The rubber outsole provides traction for your miles.",
+            "Colour Shown: Summit White/Glacier Blue/Barely Volt/Bright Crimson",
+            "Style: FJ7765-101",
+            "Country/Region of Origin: Vietnam",
           ],
           size: [
             "35.5",
@@ -219,5 +237,27 @@ var home=new Vue({
           imageProducts: "assets/images/product/product-8.jpg"
         },
       ],
+      dataDetail: {
+        name: "",
+          description:
+            "",
+          benefit: [],
+          size: [],
+          price: "",
+          priceDiscount: "",
+          imageProducts: ""
+      }
+  },
+  methods: {
+    seeProduct (index) {
+      this.dataDetail.name = this.allProducts[index].name
+      this.dataDetail.description = this.allProducts[index].description
+      this.dataDetail.benefit = this.allProducts[index].benefit
+      this.dataDetail.size = this.allProducts[index].size
+      this.dataDetail.price = this.allProducts[index].price
+      this.dataDetail.priceDiscount = this.allProducts[index].priceDiscount
+      this.dataDetail.imageProducts = this.allProducts[index].imageProducts
+      console.log(this.dataDetail.name)
+    }
   }
 })
