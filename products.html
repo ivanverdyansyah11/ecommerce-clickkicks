@@ -160,14 +160,14 @@
                                     <div class="input-group">
                                         <label for="size">Select Size</label>
                                         <select id="size" class="input">
-                                            <option selected>Select Size</option>
-                                            <option value="sx">SX</option>
+                                            <option selected id="main" v-for="sizeChart in size" :value="sizeChart"> {{ sizeChart }} </option>
+                                            <!-- <option value="sx">SX</option>
                                             <option value="sm">SM</option>
                                             <option value="s">S</option>
                                             <option value="m">M</option>
                                             <option value="l">L</option>
                                             <option value="xl">XL</option>
-                                            <option value="xxl">XXL</option>
+                                            <option value="xxl">XXL</option> -->
                                         </select>
                                     </div>
                                     <div class="input-group">
