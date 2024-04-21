@@ -13,106 +13,89 @@
 </head>
 <body id="body">
 
-    <!-- NAVBAR -->
-    <nav class="navbar container-width">
-        <a href="index.html" class="navbar-brand">
-            <img src="assets/images/brand/logo-brand-dark.svg" alt="Brand Logo Dark" height="24">
-        </a>
-        <label class="hamburger" for="hamburger">
-            <div class="hamburger-icon"></div>
-        </label>
-        <input type="checkbox" id="hamburger" class="checkbox-hamburger">
-        <ul class="navbar-link">
-            <li class="link-item link-item-featured"><a href="#home">Home</a></li>
-            <li class="link-item link-item-featured active"><a href="#products">Products</a></li>
-            <li class="link-item link-item-featured"><a href="#about">About Us</a></li>
-            <li class="link-item link-item-featured"><a href="#testimonial">Testimonial</a></li>
-        </ul>
-        <ul class="navbar-link-image">
-            <li class="link-image">
-                <img src="assets/images/icon/like.svg" alt="Like Icon" width="15">
-            </li>
-            <li class="link-image" data-bs-toggle="modal" data-bs-target="#modalCart">
-                <img src="assets/images/icon/cart.svg" alt="Cart Icon" width="15">
-            </li>
-            <li class="link-image">
-                <img src="assets/images/icon/search.svg" alt="Search Icon" width="15">
-            </li>
-        </ul>
-    </nav>
-    <!-- END NAVBAR -->
+    <!-- MAIN -->
+    <main id="main">
+        <!-- NAVBAR -->
+        <nav class="navbar container-width">
+            <a href="index.html" class="navbar-brand">
+                <img src="assets/images/brand/logo-brand-dark.svg" alt="Brand Logo Dark" height="24">
+            </a>
+            <label class="hamburger" for="hamburger">
+                <div class="hamburger-icon"></div>
+            </label>
+            <input type="checkbox" id="hamburger" class="checkbox-hamburger">
+            <ul class="navbar-link">
+                <li class="link-item link-item-featured"><a href="#home">Home</a></li>
+                <li class="link-item link-item-featured active"><a href="#products">Products</a></li>
+                <li class="link-item link-item-featured"><a href="#about">About Us</a></li>
+                <li class="link-item link-item-featured"><a href="#testimonial">Testimonial</a></li>
+            </ul>
+            <ul class="navbar-link-image">
+                <li class="link-image">
+                    <img src="assets/images/icon/like.svg" alt="Like Icon" width="15">
+                </li>
+                <li class="link-image cart" data-bs-toggle="modal" data-bs-target="#modalCart">
+                    <img src="assets/images/icon/cart.svg" alt="Cart Icon" width="15">
+                    <span v-if="carts.length > 0">{{ carts.length }}</span>
+                </li>
+                <li class="link-image">
+                    <img src="assets/images/icon/search.svg" alt="Search Icon" width="15">
+                </li>
+            </ul>
+        </nav>
+        <!-- END NAVBAR -->
 
 
-    <!-- MODAL CART -->
-    <div class="modal fade" id="modalCart" tabindex="-1" aria-labelledby="modalCart" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="wrapper d-flex align-items-center justify-content-between ">
-                        <h4 class="title">Cart Product</h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="card-cart d-flex align-items-end gap-3 justify-content-between">
-                        <div class="wrapper d-flex gap-3 align-items-center ">
-                            <img src="assets/images/product/product-1.jpg" alt="Product Image" class="cart-image">
-                            <div class="wrapper d-flex flex-column gap-2">
-                                <h6 class="cart-title primary mb-1">NIKE V2K RUN</h6>
-                                <div class="wrapper d-flex gap-4">
-                                    <h6 class="cart-subtitle">Size: 40</h6>
-                                    <h6 class="cart-subtitle">Quantity: 20</h6>
+        <!-- MODAL CART -->
+        <div class="modal fade" id="modalCart" tabindex="-1" aria-labelledby="modalCart" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="wrapper d-flex align-items-center justify-content-between ">
+                            <h4 class="title">Cart Product</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div v-if="carts.length == 0" class="card-cart d-flex justify-content-center text-center">
+                            <p class="not-found">No saving products to cart yet!</p>
+                        </div>
+                        <div v-else-if="carts.length > 0" v-for="product in carts" :key="product.id" class="card-cart d-flex align-items-end gap-3 justify-content-between">
+                            <div class="wrapper d-flex gap-3 align-items-center ">
+                                <img :src="allProducts[product.product_id].imageProducts" alt="allProducts[product.product_id].name" class="cart-image">
+                                <div class="wrapper d-flex flex-column gap-2">
+                                    <h6 class="cart-title primary mb-1">{{ allProducts[product.product_id].name }}</h6>
+                                    <div class="wrapper d-flex gap-4">
+                                        <h6 class="cart-subtitle">Size: {{ product.size }} UK</h6>
+                                        <h6 class="cart-subtitle">Quantity: {{ product.quantity }}</h6>
+                                    </div>
+                                    <h6 class="cart-subtitle">Packaging: {{ product.packaging }}</h6>
+                                    <h6 class="cart-subtitle">Special Request: {{ product.note }}</h6>
                                 </div>
-                                <h6 class="cart-subtitle">Packaging: Bubble Wrap</h6>
-                                <h6 class="cart-subtitle">Special Request: -</h6>
+                            </div>
+                            <div class="wrapper">
+                                <h6 v-if="allProducts[product.product_id].priceDiscount != null" class="cart-title mb-2">{{ Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(allProducts[product.product_id].priceDiscount.replace(/,/g, '') * product.quantity) }}</h6>
+                                <h6 v-else class="cart-title mb-2">{{ Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(allProducts[product.product_id].price.replace(/,/g, '') * product.quantity) }}</h6>
+                                <button type="button" class="button-primary" @click="deleteProductFromCart(product.id)">Delete Product</button>
                             </div>
                         </div>
-                        <div class="wrapper">
-                            <h6 class="cart-title mb-2">RP 1,909,000</h6>
-                            <button type="button" class="button-primary">Delete Product</button>
-                        </div>
-                    </div>
-                    <div class="card-cart d-flex align-items-end gap-3 justify-content-between">
-                        <div class="wrapper d-flex gap-3 align-items-center ">
-                            <img src="assets/images/product/product-1.jpg" alt="Product Image" class="cart-image">
-                            <div class="wrapper d-flex flex-column gap-2">
-                                <h6 class="cart-title primary mb-1">NIKE V2K RUN</h6>
-                                <div class="wrapper d-flex gap-4">
-                                    <h6 class="cart-subtitle">Size: 40</h6>
-                                    <h6 class="cart-subtitle">Quantity: 20</h6>
-                                </div>
-                                <h6 class="cart-subtitle">Packaging: Bubble Wrap</h6>
-                                <h6 class="cart-subtitle">Special Request: -</h6>
-                            </div>
-                        </div>
-                        <div class="wrapper">
-                            <h6 class="cart-title mb-2">RP 1,909,000</h6>
-                            <button type="button" class="button-primary">Delete Product</button>
+                        <div v-if="carts.length > 0" class="d-flex gap-2 align-items-center justify-content-end content-gap button-line">
+                            <p class="cart-title">{{ Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(totalPriceCart) }}</p>
+                            <a target="_blank" class="button-primary" @click="buyAllProducts">Buy All Product</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- END MODAL CART -->
+        <!-- END MODAL CART -->
 
 
-    <!-- MAIN -->
-    <main id="main">
         <!-- SECTION PRODUCT -->
         <section class="trending section-gap-small container-width" id="products">
             <div class="section-header">
                 <h1 class="title">Find Your Perfect Pair at ClickKicks!</h1>
                 <p class="paragraph">Dive into the extensive collection of shoes at ClickKicks, where every step leads you closer to your ideal pair.</p>
             </div>
-            <div class="section-button">
-                <div class="wrapper">
-                    <button type="button" class="button-small active">All Shoes</button>
-                    <button type="button" class="button-small">Men</button>
-                    <button type="button" class="button-small">Women</button>
-                    <button type="button" class="button-small">Kids</button>
-                </div>
-            </div>
-            <div class="section-content-4">
-                <button  v-for="(item, index) in allProducts" :key="index" class="card-product bg-white"  data-bs-toggle="modal" data-bs-target="#productOne" style="cursor: pointer;" >
+            <div class="section-content-4 content-gap">
+                <button v-for="(item, index) in allProducts" :key="index" class="card-product bg-white"  data-bs-toggle="modal" data-bs-target="#productOne" style="cursor: pointer;" >
                     <div class="wrapper-image" @click="seeProduct(index)">
                         <div class="wrapper-image">
                         <img :src="item.imageProducts" alt="Product Image">
@@ -129,9 +112,6 @@
                     </div>
                 </button>
             </div>
-            <div class="button-group-center">
-                <button type="button" class="button-primary content-gap">More Product</button>
-            </div>
         </section>
         <!-- END SECTION PRODUCT -->
 
@@ -143,62 +123,56 @@
                     <div class="modal-body">
                         <section class="detail mt-4" id="main">
                             <div class="wrapper-image">
-                                <img src="assets/images/product/product-1.jpg" alt="Detail Product" class="detail-product">
+                                <img :src="dataDetail.imageProducts" alt="Detail Product" class="detail-product">
                             </div>
                             <div class="detail-content">
                                 <div class="wrapper d-flex justify-content-between">
-                                    <h5 v-if="dataDetail.priceDiscount != null" class="detail-price">Rp {{dataDetail.priceDiscount}}</h5>
-                                    <h5 v-else class="detail-price">Rp {{dataDetail.price}}</h5>
+                                    <h5 v-if="dataDetail.priceDiscount != null" class="detail-price">Rp {{ dataDetail.priceDiscount }}</h5>
+                                    <h5 v-else class="detail-price">Rp {{ dataDetail.price }}</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <h2 class="title">{{dataDetail.name}}</h2>
-                                <p class="paragraph">{{dataDetail.description}}</p>
+                                <h2 class="title">{{ dataDetail.name }}</h2>
+                                <p class="paragraph">{{ dataDetail.description }}</p>
                                 <ul>
                                     <li v-for="item in dataDetail.benefit">{{item}}</li>
                                 </ul>
                                 <form>
                                     <div class="input-group">
                                         <label for="size">Select Size</label>
-                                        <select id="size" class="input">
-                                            <option selected id="main" v-for="sizeChart in size" :value="sizeChart"> {{ sizeChart }} </option>
-                                            <!-- <option value="sx">SX</option>
-                                            <option value="sm">SM</option>
-                                            <option value="s">S</option>
-                                            <option value="m">M</option>
-                                            <option value="l">L</option>
-                                            <option value="xl">XL</option>
-                                            <option value="xxl">XXL</option> -->
+                                        <select id="size" class="input" required v-model="directory.selectedSize" @change="selectSizeProduct">
+                                            <option selected value="">Select size shoes</option>
+                                            <option v-for="(size, index) in dataDetail.size" :key="index" :value="size">{{ size }} UK</option>
                                         </select>
                                     </div>
                                     <div class="input-group">
                                         <label for="quantity">Quantity</label>
-                                        <input type="number" id="quantity" class="input" placeholder="Input your quantity">
+                                        <input type="number" id="quantity" class="input" placeholder="Input your quantity" value="0" min="0" v-model="directory.selectedQuantity">
                                         <p class="caption">If you can’t find your sizes, please kindly input here</p>
                                     </div>
                                     <div class="input-group">
                                         <label for="request">Special Request</label>
-                                        <input type="text" id="request" class="input" placeholder="Input your special request">
+                                        <input type="text" id="request" class="input" placeholder="Input your special request" v-model="directory.inputNote">
                                     </div>
                                     <div class="input-group">
                                         <label for="packaging">Packaging</label>
                                         <div class="wrapper-packaging">
                                             <label class="button-packaging">
-                                                <input type="radio" name="packaging">
+                                                <input type="radio" value="Normal" v-model="directory.selectedPackaging">
                                                 <span>Normal</span>
                                             </label>
                                             <label class="button-packaging">
-                                                <input type="radio" name="packaging">
+                                                <input type="radio" value="Bubble Wrap" v-model="directory.selectedPackaging">
                                                 <span>Bubble Wrap</span>
                                             </label>
                                             <label class="button-packaging">
-                                                <input type="radio" name="packaging">
+                                                <input type="radio" value="Wooden Box" v-model="directory.selectedPackaging">
                                                 <span>Wooden Box</span>
                                             </label>
                                         </div>
                                     </div>
                                     <div class="wrapper d-flex align-items-center gap-2 ">
-                                        <button type="button" class="button-primary">Add to Cart Now</button>
-                                        <a target="_blank" href="whatsapp://send?text=Hello&phone=+6281238484005" class="button-dark w-100 text-center " style="padding: 14px 24px;">Buy Now</a>
+                                        <button type="button" class="button-primary" @click="addCartProduct" data-bs-dismiss="modal" aria-label="Close">Add to Cart Now</button>
+                                        <a target="_blank" class="button-dark w-100 text-center" style="padding: 14px 24px;" @click="buyNowProduct">Buy Now</a>
                                     </div>
                                 </form>
                             </div>
@@ -221,59 +195,59 @@
             </div>
         </section>
         <!-- END SECTION CTA -->
+
+
+        <!-- FOOTER -->
+        <footer class="footer container-width" id="footer">
+            <div class="footer-profile">
+                <img src="assets/images/brand/logo-brand-light.svg" alt="Brand Logo" height="26">
+                <p class="footer-caption">At ClickKicks, we're passionate about providing you with the perfect blend of style and comfort in every step you take.</p>
+                <div class="footer-sosmed">
+                    <a target="_blank" href="https://www.facebook.com/" class="sosmed-link">
+                        <img src="assets/images/icon/facebook.svg" alt="Facebook Icon" width="16">
+                    </a>
+                    <a target="_blank" href="whatsapp://send?text=Hello&phone=+6281238484005" class="sosmed-link">
+                        <img src="assets/images/icon/whatsapp.svg" alt="Whatsapp Icon" width="16">
+                    </a>
+                    <a target="_blank" href="https://twitter.com/?lang=id" class="sosmed-link">
+                        <img src="assets/images/icon/twitter.svg" alt="Twitter Icon" width="16">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-link">
+                <h6 class="footer-title">Quick Link</h6>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="#products">Sale</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#testimonial">Testimonial</a></li>
+                </ul>
+            </div>
+            <div class="footer-link">
+                <h6 class="footer-title">Our Featured</h6>
+                <ul>
+                    <li><a href="index.html#featured">Luxury Collection</a></li>
+                    <li><a href="index.html#featured">Accessories Showcase</a></li>
+                    <li><a href="index.html#featured">Chic Workwear Edit</a></li>
+                    <li><a href="index.html#featured">Weekend Casual Collection</a></li>
+                </ul>
+            </div>
+            <div class="footer-link">
+                <h6 class="footer-title">Help & Guide</h6>
+                <ul>
+                    <li><a>Terms & Conditions</a></li>
+                    <li><a>Privacy Policy</a></li>
+                    <li><a target="_blank" href="whatsapp://send?text=Hello&phone=+6281238484005">Contact Us</a></li>
+                </ul>
+            </div>
+        </footer>
+
+        <footer class="copyright">
+            <p class="label">Copyright © 2024 CLICKKICKS. All Right Reserved.</p>
+        </footer>
+        <!-- END FOOTER -->
     </main>
     <!-- END MAIN -->
-
-
-    <!-- FOOTER -->
-    <footer class="footer container-width" id="footer">
-        <div class="footer-profile">
-            <img src="assets/images/brand/logo-brand-light.svg" alt="Brand Logo" height="26">
-            <p class="footer-caption">At ClickKicks, we're passionate about providing you with the perfect blend of style and comfort in every step you take.</p>
-            <div class="footer-sosmed">
-                <a target="_blank" href="https://www.facebook.com/" class="sosmed-link">
-                    <img src="assets/images/icon/facebook.svg" alt="Facebook Icon" width="16">
-                </a>
-                <a target="_blank" href="whatsapp://send?text=Hello&phone=+6281238484005" class="sosmed-link">
-                    <img src="assets/images/icon/whatsapp.svg" alt="Whatsapp Icon" width="16">
-                </a>
-                <a target="_blank" href="https://twitter.com/?lang=id" class="sosmed-link">
-                    <img src="assets/images/icon/twitter.svg" alt="Twitter Icon" width="16">
-                </a>
-            </div>
-        </div>
-        <div class="footer-link">
-            <h6 class="footer-title">Quick Link</h6>
-            <ul>
-                <li><a href="index.html#home">Home</a></li>
-                <li><a href="#products">Sale</a></li>
-                <li><a href="index.html#about">About Us</a></li>
-                <li><a href="index.html#testimonial">Testimonial</a></li>
-            </ul>
-        </div>
-        <div class="footer-link">
-            <h6 class="footer-title">Our Featured</h6>
-            <ul>
-                <li><a href="index.html#featured">Luxury Collection</a></li>
-                <li><a href="index.html#featured">Accessories Showcase</a></li>
-                <li><a href="index.html#featured">Chic Workwear Edit</a></li>
-                <li><a href="index.html#featured">Weekend Casual Collection</a></li>
-            </ul>
-        </div>
-        <div class="footer-link">
-            <h6 class="footer-title">Help & Guide</h6>
-            <ul>
-                <li><a>Terms & Conditions</a></li>
-                <li><a>Privacy Policy</a></li>
-                <li><a target="_blank" href="whatsapp://send?text=Hello&phone=+6281238484005">Contact Us</a></li>
-            </ul>
-        </div>
-    </footer>
-
-    <footer class="copyright">
-        <p class="label">Copyright © 2024 CLICKKICKS. All Right Reserved.</p>
-    </footer>
-    <!-- END FOOTER -->
 
 
     <!-- SCRIPT JS -->
