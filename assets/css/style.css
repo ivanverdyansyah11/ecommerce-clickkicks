@@ -320,6 +320,22 @@ nav.navbar .navbar-link-image .link-image {
     align-items: center;
     border: 1px solid transparent;
     cursor: pointer;
+    position: relative;
+}
+
+nav.navbar .navbar-link-image .link-image.cart span {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background-color: rgba(var(--primary-color), 1);
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.575rem;
+    color: rgba(var(--light-color), 1);
 }
 
 nav.navbar .navbar-link-image .link-image:hover {
@@ -526,6 +542,7 @@ header.hero .button-reverse-light:hover {
 
 /* SECTION TRENDING */
 section.trending .card-product {
+    all: unset;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -607,6 +624,7 @@ section.category .card-category .wrapper-content {
     gap: 20px;
     justify-content: space-between;
     align-items: center;
+    margin-top: 8px;
 }
 
 section.trending .card-product .wrapper-content .card-title,
@@ -631,6 +649,7 @@ section.category .card-category .wrapper-content .card-price {
     font-family: var(--urbanist-bold);
     color: rgba(var(--dark-color), 0.62);
     text-transform: uppercase;
+    text-wrap: nowrap;
 }
 /* END SECTION TRENDING */
 
@@ -1194,6 +1213,23 @@ section.detail .button-primary:hover {
 
 
 /* MODAL CART */
+.modal .button-line {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(var(--dark-color), 0.12);
+}
+
+.modal .card-cart .not-found {
+    font-size: 0.913rem;
+    color: rgba(var(--dark-color), 0.52);
+    padding: 42px 0;
+}
+
+.modal .card-cart .all-price {
+    font-size: 1;
+    color: rgba(var(--dark-color), 1);
+}
+
 .modal .card-cart:not(:first-child) {
     margin-top: 16px;
     padding-top: 16px;
