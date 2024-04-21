@@ -281,15 +281,7 @@
                 <h1 class="title">Find Your Perfect Pair at ClickKicks!</h1>
                 <p class="paragraph">Dive into the extensive collection of shoes at ClickKicks, where every step leads you closer to your ideal pair.</p>
             </div>
-            <div class="section-button">
-                <div class="wrapper">
-                    <button type="button" class="button-small active">All Shoes</button>
-                    <button type="button" class="button-small">Men</button>
-                    <button type="button" class="button-small">Women</button>
-                    <button type="button" class="button-small">Kids</button>
-                </div>
-            </div>
-            <div class="section-content-4">
+            <div class="section-content-4 content-gap">
                 <a href="detail.html" class="card-product" v-for="product in allProducts">
                     <div class="wrapper-image">
                         <img :src="product.imageProducts" alt="Product Image">
@@ -305,9 +297,6 @@
                         <p v-else class="card-price">Rp {{product.price}}</p>
                     </div>
                 </a>
-            </div>
-            <div class="button-group-center">
-                <button type="button" class="button-primary content-gap">More Product</button>
             </div>
         </section>
         <!-- END SECTION PRODUCT -->
